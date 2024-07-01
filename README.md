@@ -15,3 +15,5 @@
 # added: "start" script
 
 # created: "index.js"
+
+# Added: tailwind
