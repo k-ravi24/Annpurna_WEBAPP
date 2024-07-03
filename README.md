@@ -17,3 +17,15 @@
 # created: "index.js"
 
 # Added: tailwind
+
+# npm install -D tailwindcss postcss
+
+# npx tailwindcss init
+
+# created ".postcssrc"
+
+# created: index.css
+
+# created: src
+
+# created: component
