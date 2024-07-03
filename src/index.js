@@ -6,9 +6,6 @@ import Navbar from "./Components/Common/Navbar";
 const Index = () => {
   return (
     <>
-      <h1 className="text-red-500 text-5xl">
-        This is the starting of Annpurna Food
-      </h1>
       <Navbar />
     </>
   );
