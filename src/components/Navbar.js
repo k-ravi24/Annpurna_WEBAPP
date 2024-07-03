@@ -9,13 +9,10 @@ const Navbar = () => {
   return (
     <>
       <div className="flex small-laptop:h-20 w-full mid-laptop:px-8 small-laptop:px-6 shadow-md">
-        {/* company logo section */}
         <div className="flex items-center h-full">
           <img src={logo} className="small-laptop:w-10" />
         </div>
-        {/* navlink and buttons section */}
         <div className="w-full flex small-laptop:pl-8">
-          {/* navlink section */}
           <ul className="hidden small-laptop:flex space-x-5 h-full items-center w-2/5">
             {navbar.map((item, index) => (
               <li
@@ -26,7 +23,6 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          {/* buttons section */}
           <div className="w-3/5 flex items-center justify-end space-x-5">
             <div className="flex items-center cursor-pointer border border-slate-300 rounded-md pl-2 mr-1">
               <div className="text-slate-700">
