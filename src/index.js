@@ -15,7 +15,9 @@ const Index = () => {
       <div className="mid-laptop:px-8">
         <InformationalSection data={information} />
       </div>
-      <Carousel />
+      <div className="mid-laptop:px-8">
+        <Carousel spaceBetween={16} />
+      </div>
     </>
   );
 };
