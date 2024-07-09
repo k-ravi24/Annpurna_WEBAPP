@@ -6,8 +6,11 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 const InformationalSection = ({ data }) => {
   return (
     <div className="grid small-laptop:grid-cols-2 small-laptop:gap-8 h-96">
-      {data.map((info) => (
-        <div className="border border-slate-300 rounded-md shadow-md">
+      {data.map((info, index) => (
+        <div
+          className="border border-slate-300 rounded-md shadow-md"
+          key={index}
+        >
           <div
             className="bg-cover bg-center bg-no-repeat rounded-t-md h-80"
             style={{ backgroundImage: `url(${info.thumbnail.url})` }}
