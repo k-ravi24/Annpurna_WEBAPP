@@ -24,8 +24,6 @@ const Carousel = ({ restaurants }) => {
     console.log(card.current.offsetWidth);
   }, [carouselContainer, card]);
 
-  console.log(carouselRefernce);
-
   const handleLeftArrow = () => {
     carouselContainer.current.scrollLeft -= carouselRefernce.cardWidth + 16;
     if (carouselContainer.current.scrollLeft > 0) {
@@ -47,6 +45,12 @@ const Carousel = ({ restaurants }) => {
 
   const handleRightArrow = () => {
     carouselContainer.current.scrollLeft += carouselRefernce.cardWidth + 16;
+
+    console.log(`carousel width: ${carouselRefernce.carouselWidth}`);
+    console.log(
+      `carousel container width: ${carouselRefernce.carouselContainerWidth}`
+    );
+    console.log(`scroll left: ${carouselContainer.current.scrollLeft}`);
     if (carouselContainer.current.scrollLeft > 0) {
       setActiveLeftArrow(true);
     } else {
@@ -55,19 +59,33 @@ const Carousel = ({ restaurants }) => {
 
     if (
       carouselContainer.current.scrollLeft +
-        carouselRefernce.carouselContainerWidth ===
-      carouselRefernce.carouselWidth
+        carouselRefernce.carouselContainerWidth >=
+      carouselRefernce.carouselWidth - 16
     ) {
       setActiveRightArrow(false);
     } else {
       setActiveRightArrow(true);
     }
+
+    // console.log(
+    //   carouselContainer.current.scrollLeft +
+    //     carouselRefernce.carouselContainerWidth ===
+    //     carouselRefernce.carouselWidth
+    // );
+
+    // console.log(
+    //   `Addition: ${
+    //     carouselContainer.current.scrollLeft +
+    //     carouselRefernce.carouselContainerWidth
+    //   }`
+    // );
+    // console.log(`Carousel Width: ${carouselRefernce.carouselWidth}`);
   };
   return (
     <>
       <div className="w-full overflow-hidden px-12 relative">
         <div
-          className="w-full overflow-x-scroll hide-scrollbar"
+          className="w-full overflow-x-scroll scroll-smooth transition-all hide-scrollbar"
           ref={carouselContainer}
         >
           <div className="w-fit" ref={carousel}>
@@ -75,7 +93,7 @@ const Carousel = ({ restaurants }) => {
               {restaurants.map((item) => (
                 <div
                   key={item.id}
-                  className="small-laptop:mr-2 mid-laptop:mr-4 last:small-laptop:mr-0"
+                  className="small-laptop:mr-4 last:small-laptop:mr-0"
                   ref={card}
                 >
                   <RestroCard
