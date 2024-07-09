@@ -6,17 +6,17 @@ import InformationalSection from "./components/homePage/InformationalSection";
 import VerticalSpacer from "./components/verticalSpacer";
 import information from "./data/InformationalSection";
 import Carousel from "./components/Carousel";
+import restaurants from "./data/restaurants";
 
 const Index = () => {
   return (
     <>
       <Navbar />
-      <VerticalSpacer mobileHeight={8} />
-      <div className="mid-laptop:px-8">
+      <div className="mid-laptop:px-8 my-8">
         <InformationalSection data={information} />
       </div>
-      <div className="mid-laptop:px-8">
-        <Carousel spaceBetween={16} />
+      <div className="mid-laptop:px-8 my-4">
+        <Carousel spaceBetween={16} restaurants={restaurants} />
       </div>
     </>
   );
